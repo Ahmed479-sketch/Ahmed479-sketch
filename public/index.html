@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Diary App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📖 Daily Diary</h1>
+            <p>Capture your thoughts, one day at a time</p>
+        </header>
+
+        <div class="controls">
+            <div class="month-selector">
+                <label for="monthSelect">View Month:</label>
+                <select id="monthSelect">
+                    <option value="">All Entries</option>
+                </select>
+            </div>
+            <button id="newEntryBtn" class="btn btn-primary">+ New Entry</button>
+        </div>
+
+        <!-- Entry Form Modal -->
+        <div id="entryModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">New Diary Entry</h2>
+                <form id="entryForm">
+                    <div class="form-group">
+                        <label for="entryDate">Date:</label>
+                        <input type="date" id="entryDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="entryTitle">Title:</label>
+                        <input type="text" id="entryTitle" placeholder="What happened today?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="entryMood">Mood:</label>
+                        <select id="entryMood">
+                            <option value="neutral">😐 Neutral</option>
+                            <option value="happy">😊 Happy</option>
+                            <option value="sad">😢 Sad</option>
+                            <option value="excited">🤩 Excited</option>
+                            <option value="anxious">😰 Anxious</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="entryContent">Content:</label>
+                        <textarea id="entryContent" rows="6" placeholder="Tell me about your day..." required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Entry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Entries List -->
+        <div id="entriesList" class="entries-list">
+            <div id="loadingSpinner" class="loading">Loading entries...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
